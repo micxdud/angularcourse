@@ -7,9 +7,8 @@ import routing from './config';
 
 import home from './features/home';
 import github from './features/github';
+import test from './features/test';
 
-const ngModule = angular.module('app', [uirouter, home, github])
+const ngModule = angular.module('app', [uirouter, home, github, test])
                         .config(routing);
-   
-
-
+                        
