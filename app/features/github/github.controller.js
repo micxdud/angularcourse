@@ -2,28 +2,28 @@ export default class GitHubController
 {
   constructor($http, $scope) {
       this.$http = $http;
-      this.makeRequest();
+      this.getUser();
       this.getRepos();
   }
 
-  makeRequest() {
+  getUser() {
       this.$http.get('https://api.github.com/users/Microsoft')
-        .then(this.showProfile.bind(this));
+        .then(this.handleGetUserSuccess.bind(this));
   }
   
   getRepos() {
       this.$http.get('https://api.github.com/users/Microsoft/repos')
-        .then(this.showRepos.bind(this));
+        .then(this.handleGetReposSuccess.bind(this));
   }
   
-  showProfile(response) {
+  handleGetUserSuccess(response) {
       this.User = response.data;
-      console.log(this.User)
+      console.log(this.User);
   }
   
-  showRepos(response) {
+  handleGetReposSuccess(response) {
       this.UserRepos = response.data;
-      console.log(this.UserRepos)
+      console.log(this.UserRepos);
   }
 
 }
