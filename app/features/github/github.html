@@ -2,5 +2,9 @@
     <h1>Github</h1>
 </div>
 
-<github-user></github-user>
-<github-repos></github-repos>
+<user-input></user-input>
+
+<div ng-show="github.selectedUser">
+    <github-user></github-user>
+    <github-repos></github-repos>
+</div>
